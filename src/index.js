@@ -1,6 +1,6 @@
 require("dotenv").config();
 const fs = require("fs");
-const path = require("path");
+const path = require("path"); // Füge diese Zeile hinzu
 const { Client, Collection, IntentsBitField } = require("discord.js");
 
 const client = new Client({
@@ -18,7 +18,7 @@ const allowedChannelId = "1313150143205216358"; // Ersetze mit der ID des gewün
 
 // Lese alle Befehlsdateien und füge sie hinzu
 const commandFiles = fs
-  .readdirSync(path.join(__dirname, "src", "commands")) // Hier den absoluten Pfad verwenden
+  .readdirSync(path.join(__dirname, "src", "commands")) // Verwende den absoluten Pfad
   .filter((file) => file.endsWith(".js"));
 
 commandFiles.forEach((commandFile) => {
