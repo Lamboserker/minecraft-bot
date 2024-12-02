@@ -1,5 +1,6 @@
 require("dotenv").config();
 const fs = require("fs");
+const path = require("path");
 const { Client, Collection, IntentsBitField } = require("discord.js");
 
 const client = new Client({
