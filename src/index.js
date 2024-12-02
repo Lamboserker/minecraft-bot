@@ -18,11 +18,11 @@ const allowedChannelId = "1313150143205216358"; // Ersetze mit der ID des gewün
 
 // Lese alle Befehlsdateien und füge sie hinzu
 const commandFiles = fs
-  .readdirSync(path.join(__dirname, "src", "commands")) // Verwende den absoluten Pfad
+  .readdirSync(path.join(__dirname, "commands"))
   .filter((file) => file.endsWith(".js"));
 
 commandFiles.forEach((commandFile) => {
-  const command = require(path.join(__dirname, "src", "commands", commandFile)); // Absoluter Pfad für das Laden der Dateien
+  const command = require(path.join(__dirname, "commands", commandFile)); // Absoluter Pfad für das Laden der Dateien
   client.commands.set(command.data.name, command);
 });
 
